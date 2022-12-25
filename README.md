@@ -1,16 +1,16 @@
 automatic prompt generation for stable diffusion
 =======
-# Twitcher
+# Introduction
 
-This project aims to develop an application using citizen science approach to crowd-source bird population dynamics information. The application provides a platform for amateur and professional birdwatchers to upload bird sighting reports that will form a database including time, species, and location data. Scientists may use the information in the database to analyze the distribution and dynamics of bird populations. While various existing citizen science databases also provide some of these functionalities, our platform is unique because it allows birders to help each other with bird identification and implements quality control procedures based on a ranking of user contributions. Our platform will reduce the uncertainties that often hamper the use of citizen science data, provide a user-friendly platform for birdwatchers to keep track of their sightings, and foster a lively community among bird enthusiasts.
+This project is to help users better use text-to-image models such as Stable Diffusion. When users would like to generate some objects or certain landscapes, but the input prompts are too simple, resulting in relatively low quality output images and relatively monotonous content, this project is finetune GPT-2 on DiffusionDB for to realize the mapping of users' simple prompts to complex prompts.
 
 Twitcher is a web application to bridge the gaps between scientists' need for more accurate and reliable data and amateur birders' demand for an accessible bird report platform. The app will allow birders to submit bird observational reports and to ask for help in the community when having difficulties to identify birds. A birder can use the app to see what are the bird species observed in theirs cities, learn the description and distribution of various bird species, use the app to keep track of their species lists, and share their achievements on social media platforms. By creating a fun, accessible tool for amateur users, we hope our platform can attract more users to submit their bird observation reports, and ultimately providing higher quality data for professional scientists. We also decided to not have a mobile client because according to conversations with birders, most of them have a habit of carrying a notebook and recording specific locations (longitude, lattitude) and other relevant information immediately and can upload to the web client later. Also, many places of bird-sightings may not have signal to enable the submission of reports immediately.
 
 **Advisors** 
 
-| Name | JHU Email | GitHub Username |
+| Name | RUC Email | GitHub Username |
 | ---- | --------- | --------------- |
-|  Nick Xitco    |  nxitco@jhu.edu   |   NickXitco          |
+|  Hanzhong Guo    |  2022100402@ruc.edu.cn   |   Guohanzhong         |
 
 
 ## Installing / Getting started
@@ -23,26 +23,7 @@ cd project-g03
 cd code
 
 # Install all the dependencies for the frontend
-cd frontend
-npm install
-npm start (to run)
-
-# Direct to api folder
-cd ..
-cd api
-
-# Install python modules for backend (install python3, venv first if needed)
-python -m venv birdy-env
-./birdy-env/bin/activate # In Windows, use '.\birdy-env\Scripts\activate' instead
 pip install -r requirements.txt
-flask run (to run)
-
-# Note everytime you want to run, you need to activate virtual environment again
-```
-
-Here you should say what actually happens when you execute the code above.
-
-
 
 ## Preparing datasets for training
 
