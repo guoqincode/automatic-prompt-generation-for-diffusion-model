@@ -50,10 +50,12 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 
 The basic usage for training is
 ```sh
-python run_clm.py     --model_name_or_path gpt2   --train_file /mnt/guohanzhong/bingdialogue/promptreinforce/diffusiondb.txt  --per_device_train_batch_size 5     --per_device_eval_batch_size 4     --do_train     --do_eval     --output_dir /mnt/guohanzhong/bingdialogue/promptreinforce/temp/  --overwrite_output_dir True
+python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_device_train_batch_size per_device_train_batch_size     --per_device_eval_batch_size per_device_eval_batch_size --do_train --do_eval --output_dir path/output  --overwrite_output_dir True
 ```
-* `pretrained_path` is the path to a model to evaluate. <a href="#model">Here</a> provide all models evaluated in this work.
-* 
+* `model_name_or_path` is the path to for basic model to finetune.
+* `train_file` is the dataset we use to finetune the model, it is recommond to use the diffusiondb.txt to finetune (More about this data is in the section "Database")
+* `per_device_train_batch_size` is train batch size per device, we would construct each samples use the frame of pretrained-data frame.
+
 ## Database
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
