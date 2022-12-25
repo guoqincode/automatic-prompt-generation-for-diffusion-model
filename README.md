@@ -25,7 +25,7 @@ cd automatic-prompt-generation-for-diffusion-model
 pip install -r requirements.txt
 ```
 
-## Preparing datasets for training
+## Demo for the Results
 
 
 ## Finetune GPT-2
