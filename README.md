@@ -56,6 +56,8 @@ python inference.py --pre_path pretrained_path --ini_query str
 ```
 * `pre_path` is the pretrained model path to load.
 * `ini_query` is the query input for generating a detailed prompt.
+
+And you could obtain the checkpoint in the following link. [Links](https://drive.google.com/file/d/15OhhKgazTK4KP8Wr_tP78UftcRgM756o/view?usp=share_link)
 ## Database
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
@@ -65,7 +67,7 @@ Before the finetune model, we need to prepare the dataset of DiffusionDB, and we
 <BOS> doom eternal, game concept art, veins and worms, muscular, crustacean exoskeleton, chiroptera head, chiroptera ears, mecha, ferocious, fierce, hyperrealism, fine details, artstation, cgsociety, zbrush, no background <EOS> 
 ```
 The data can be obtained as follows.
-|[DiffusionDB.txt](https://drive.google.com/file/d/15OhhKgazTK4KP8Wr_tP78UftcRgM756o/view?usp=share_link) | 
+[DiffusionDB.txt](https://drive.google.com/file/d/15OhhKgazTK4KP8Wr_tP78UftcRgM756o/view?usp=share_link)
 
 ## Results
 ```shell
