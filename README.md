@@ -36,8 +36,10 @@ python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_d
 * `train_file` is the dataset we use to finetune the model, it is recommond to use the diffusiondb.txt to finetune (More about this data is in the section "Database")
 * `per_device_train_batch_size` is train batch size per device, we would construct each samples use the frame of pretrained-data frame.
 
-What's more, it is required to login [wandb](https://wandb.ai)
-
+What's more, it is required to login [wandb](https://wandb.ai), enter the following in the command line and enter your key in the [wandb](https://wandb.ai).
+```sh
+wandb login --relogin
+```
 By default, `train.py` is configured to train the GPT-2 for the DiffusionDB dataset at 58000 iterations using 1 GPUs. 
 
 Expected training times for the default configuration using Tesla V100 GPUs:
