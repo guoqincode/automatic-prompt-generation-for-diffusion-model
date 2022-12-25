@@ -30,23 +30,7 @@ pip install -r requirements.txt
 
 ## Finetune GPT-2
 
-Once the datasets are set up, you can train your own StyleGAN networks as follows:
-
-1. Edit [train.py](./train.py) to specify the dataset and training configuration by uncommenting or editing specific lines.
-2. Run the training script with `python train.py`.
-3. The results are written to a newly created directory `results/<ID>-<DESCRIPTION>`.
-4. The training may take several days (or weeks) to complete, depending on the configuration.
-
-By default, `train.py` is configured to train the highest-quality StyleGAN (configuration F in Table 1) for the FFHQ dataset at 1024&times;1024 resolution using 8 GPUs. Please note that we have used 8 GPUs in all of our experiments. Training with fewer GPUs may not produce identical results &ndash; if you wish to compare against our technique, we strongly recommend using the same number of GPUs.
-
-Expected training times for the default configuration using Tesla V100 GPUs:
-
-| GPUs | 1024&times;1024  | 512&times;512    | 256&times;256    |
-| :--- | :--------------  | :------------    | :------------    |
-| 1    | 41 days 4 hours  | 24 days 21 hours | 14 days 22 hours |
-| 2    | 21 days 22 hours | 13 days 7 hours  | 9 days 5 hours   |
-| 4    | 11 days 8 hours  | 7 days 0 hours   | 4 days 21 hours  |
-| 8    | 6 days 14 hours  | 4 days 10 hours  | 3 days 8 hours   |
+Once the datasets are set up, you can finetune your own GPT-2 networks as follows:
 
 The basic usage for training is
 ```sh
@@ -55,6 +39,17 @@ python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_d
 * `model_name_or_path` is the path to for basic model to finetune.
 * `train_file` is the dataset we use to finetune the model, it is recommond to use the diffusiondb.txt to finetune (More about this data is in the section "Database")
 * `per_device_train_batch_size` is train batch size per device, we would construct each samples use the frame of pretrained-data frame.
+
+
+By default, `train.py` is configured to train the GPT-2 for the DiffusionDB dataset at 58000&times;using 1 GPUs. 
+
+Expected training times for the default configuration using Tesla V100 GPUs:
+
+| GPUs | 58000&times;  | 100000&times;   | 200000&times;256    |
+| :--- | :--------------  | :------------    | :------------    |
+| 1    | 41 days 4 hours  | 24 days 21 hours | 14 days 22 hours |
+| 2    | 21 days 22 hours | 13 days 7 hours  | 9 days 5 hours   |
+| 4    | 11 days 8 hours  | 7 days 0 hours   | 4 days 21 hours  |
 
 ## Database
 
