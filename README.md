@@ -4,7 +4,7 @@ automatic prompt generation for stable diffusion
 
 This project is to help users better use text-to-image models such as Stable Diffusion. When users would like to generate some objects or certain landscapes, but the input prompts are too simple, resulting in relatively low quality output images and relatively monotonous content, this project is finetune GPT-2 on DiffusionDB for to realize the mapping of users' simple prompts to complex prompts.
 
-Twitcher is a web application to bridge the gaps between scientists' need for more accurate and reliable data and amateur birders' demand for an accessible bird report platform. The app will allow birders to submit bird observational reports and to ask for help in the community when having difficulties to identify birds. A birder can use the app to see what are the bird species observed in theirs cities, learn the description and distribution of various bird species, use the app to keep track of their species lists, and share their achievements on social media platforms. By creating a fun, accessible tool for amateur users, we hope our platform can attract more users to submit their bird observation reports, and ultimately providing higher quality data for professional scientists. We also decided to not have a mobile client because according to conversations with birders, most of them have a habit of carrying a notebook and recording specific locations (longitude, lattitude) and other relevant information immediately and can upload to the web client later. Also, many places of bird-sightings may not have signal to enable the submission of reports immediately.
+Twitcher 
 
 **Advisors** 
 
