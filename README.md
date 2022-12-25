@@ -55,6 +55,6 @@ Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset contain
 
 Before the finetune model, we need to prepare the dataset of DiffusionDB, and we only need its text data at this stage, with a total of two million text data. The data format of the text data is shown below, each piece of data is a detailed user-written prompt, and this prompt can produce high-quality images.
 ```shell
-<BOS> doom eternal, game concept art, veins and worms, muscular, crustacean exoskeleton, chiroptera head, chiroptera ears, mecha, ferocious, fierce, hyperrealism, fine details, artstation, cgsociety, zbrush, no background <EOS> ]
+<BOS> doom eternal, game concept art, veins and worms, muscular, crustacean exoskeleton, chiroptera head, chiroptera ears, mecha, ferocious, fierce, hyperrealism, fine details, artstation, cgsociety, zbrush, no background <EOS> 
 ```
 The data can be obtained as follows.
