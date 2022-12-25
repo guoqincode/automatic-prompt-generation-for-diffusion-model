@@ -41,15 +41,15 @@ python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_d
 * `per_device_train_batch_size` is train batch size per device, we would construct each samples use the frame of pretrained-data frame.
 
 
-By default, `train.py` is configured to train the GPT-2 for the DiffusionDB dataset at 58000&times;using 1 GPUs. 
+By default, `train.py` is configured to train the GPT-2 for the DiffusionDB dataset at 58000 iterations using 1 GPUs. 
 
 Expected training times for the default configuration using Tesla V100 GPUs:
 
-| GPUs | 58000&times;  | 100000&times;   | 200000&times;256    |
-| :--- | :--------------  | :------------    | :------------    |
-| 1    | 41 days 4 hours  | 24 days 21 hours | 14 days 22 hours |
-| 2    | 21 days 22 hours | 13 days 7 hours  | 9 days 5 hours   |
-| 4    | 11 days 8 hours  | 7 days 0 hours   | 4 days 21 hours  |
+| GPUs | 58000 iterations;  | 100000 iterations;   |
+| :--- | :--------------  | :------------    | 
+| 1    | 6 hours  | 10 hours | 
+| 2    | 4 hours | 8 hours  |
+| 4    | 3 hours  | 6 hours   |
 
 ## Database
 
