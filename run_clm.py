@@ -271,7 +271,7 @@ def main():
     else:
         data_files = {}
         dataset_args = {}
-        file_path = '/mnt/guohanzhong/bingdialogue/promptreinforce/diffusiondb.txt'
+        file_path = './diffusiondb.txt'
 
         #if data_args.train_file is not None:
         #    data_files["train"] = data_args.train_file
