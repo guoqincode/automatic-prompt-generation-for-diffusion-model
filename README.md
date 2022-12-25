@@ -14,16 +14,6 @@ Twitcher is a web application to bridge the gaps between scientists' need for mo
 | ---- | --------- | --------------- |
 |  Nick Xitco    |  nxitco@jhu.edu   |   NickXitco          |
 
-**Team**
-
-| Name | JHU Email | GitHub Username |
-| ---- | --------- | --------------- |
-| Chuheng Hu     |  chu29@jhu.edu         |      chuheng001           |
-| Jianing Fang      |  jfang25@jhu.edu         |   JianingFang              | 
-| Gongqi Huang     |   ghuang22@jhu.edu        |   amongthestarss              | 
-| Jiayi He     |  jhe48@jhu.edu         |   Elaine-He              |
-| Ariel Bao     |    rbao4@jhu.edu        |     arielbr       |
-|  Yuntao Li     |   yli346@jhu.edu        |    tottiliyt             |
 
 ## Installing / Getting started
 
@@ -54,119 +44,52 @@ flask run (to run)
 
 Here you should say what actually happens when you execute the code above.
 
-## Developing
 
-### Built With
-List main libraries, frameworks used including versions (React, Angular etc...)
 
-### Prerequisites
-    Python 3.6,
-    npm: 6.14.8,
-    node: 12.19.0,
+## Preparing datasets for training
 
-### Setting up Dev
+The training and evaluation scripts operate on datasets stored as multi-resolution TFRecords. Each dataset is represented by a directory containing the same image data in several resolutions to enable efficient streaming. There is a separate *.tfrecords file for each resolution, and if the dataset contains labels, they are stored in a separate file as well. By default, the scripts expect to find the datasets at `datasets/<NAME>/<NAME>-<RESOLUTION>.tfrecords`. The directory can be changed by editing [config.py](./config.py):
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/cs421sp21-homework/project-g03.git
-cd project-g03
-cd code
-
-# Install all the dependencies for the frontend
-cd frontend
-npm install
-
-# Direct to api folder
-cd ..
-cd api
-
-# Install virtual environment python modules for backend (install python3, venv first if needed)
-python -m venv birdy-env
-# activate python virtual environment 
-./birdy-env/bin/activate # In Windows, use '.\birdy-env\Scripts\activate' instead
-pip install -r requirements.txt
-
-# Note everytime you want to run, you need to activate virtual environment again
+```
+result_dir = 'results'
+data_dir = 'datasets'
+cache_dir = 'cache'
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+To obtain the FFHQ dataset (`datasets/ffhq`), please refer to the [Flickr-Faces-HQ repository](https://github.com/NVlabs/ffhq-dataset).
 
-### Building
+To obtain the CelebA-HQ dataset (`datasets/celebahq`), please refer to the [Progressive GAN repository](https://github.com/tkarras/progressive_growing_of_gans).
 
-There is no additional building needed
+To obtain other datasets, including LSUN, please consult their corresponding project pages. The datasets can be converted to multi-resolution TFRecords using the provided [dataset_tool.py](./dataset_tool.py):
 
-### Deploying / Publishing
-
-We use Heroku to deploy both frontend and backend seperately
-
-Frontend:
-
-Install Heroku CLI in your system by running the following command. It will install the updated version of Heroku CLI into your system.
-
-```shell
-curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
 ```
-Now, get to https://www.heroku.com/ and register. After completing your registration go to the dashboard and create a new app named “twitcher”  or name of your choice.
-
-
-```shell
-heroku login
-```
-Initialize a Git repository by running the following command. Make sure you be at the top-level of your project directory.
-
-```shell
-git init
+> python dataset_tool.py create_lsun datasets/lsun-bedroom-full ~/lsun/bedroom_lmdb --resolution 256
+> python dataset_tool.py create_lsun_wide datasets/lsun-car-512x384 ~/lsun/car_lmdb --width 512 --height 384
+> python dataset_tool.py create_lsun datasets/lsun-cat-full ~/lsun/cat_lmdb --resolution 256
+> python dataset_tool.py create_cifar10 datasets/cifar10 ~/cifar10
+> python dataset_tool.py create_from_images datasets/custom-dataset ~/custom-images
 ```
 
-Add the Heroku remote
-```shell
-heroku git: remote -a twitcher
-```
+## Training networks
 
-Now run the following commands to push your project to the repository.
+Once the datasets are set up, you can train your own StyleGAN networks as follows:
 
-```shell
-git add.
-git commit -m "First Commit"
-git push heroku master
-```
+1. Edit [train.py](./train.py) to specify the dataset and training configuration by uncommenting or editing specific lines.
+2. Run the training script with `python train.py`.
+3. The results are written to a newly created directory `results/<ID>-<DESCRIPTION>`.
+4. The training may take several days (or weeks) to complete, depending on the configuration.
 
-Finally, the web app will be deployed.
+By default, `train.py` is configured to train the highest-quality StyleGAN (configuration F in Table 1) for the FFHQ dataset at 1024&times;1024 resolution using 8 GPUs. Please note that we have used 8 GPUs in all of our experiments. Training with fewer GPUs may not produce identical results &ndash; if you wish to compare against our technique, we strongly recommend using the same number of GPUs.
 
-Backend:
+Expected training times for the default configuration using Tesla V100 GPUs:
 
-Similar to the frontend, you need to move to `code/api` directory and push all to your backend heroku server.
+| GPUs | 1024&times;1024  | 512&times;512    | 256&times;256    |
+| :--- | :--------------  | :------------    | :------------    |
+| 1    | 41 days 4 hours  | 24 days 21 hours | 14 days 22 hours |
+| 2    | 21 days 22 hours | 13 days 7 hours  | 9 days 5 hours   |
+| 4    | 11 days 8 hours  | 7 days 0 hours   | 4 days 21 hours  |
+| 8    | 6 days 14 hours  | 4 days 10 hours  | 3 days 8 hours   |
 
-## Versioning
-
-We can maybe use [SemVer](http://semver.org/) for versioning. 
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when using the project.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
-
-```shell
-Give an example
-```
-
-## Style guide
-
-Explain your code style and show how to check it.
-
-## Api Reference
-
-```shell
-# Make sure to activate virtual env
-cd /code/api/doc/
-make html
-```
 
 ## Database
 
