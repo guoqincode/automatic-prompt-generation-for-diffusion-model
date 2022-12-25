@@ -57,7 +57,7 @@ python inference.py --pre_path pretrained_path --ini_query str
 * `pre_path` is the pretrained model path to load.
 * `ini_query` is the query input for generating a detailed prompt.
 
-And you could obtain the checkpoint in the following link. [Links](https://drive.google.com/file/d/15OhhKgazTK4KP8Wr_tP78UftcRgM756o/view?usp=share_link)
+And you could obtain the checkpoint in the following link. [Links](https://drive.google.com/drive/folders/1x3_Q_GpDLAGdkAWMO8L2O-BU8X86FU7K?usp=share_link)
 ## Database
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
