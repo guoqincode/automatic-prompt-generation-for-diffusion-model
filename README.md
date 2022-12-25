@@ -76,3 +76,9 @@ Input: a picture of iron man
 Output: a picture of iron man, close up, fantasy, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha
 ```
 ![Result1](temp/iron.png)
+
+```shell
+Input: a picture of a man and a dog
+Output: a picture of a man and a dog kissing in a field, digital art, trending on artstation, concept art, award - winning, hyper detailed, ultra realistic, sharp, 4 k, 8 k, art by greg rutkowski
+```
+![Result1](temp/boy.png)
