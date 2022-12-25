@@ -23,6 +23,7 @@ cd automatic-prompt-generation-for-diffusion-model
 
 # Install all the dependencies for the frontend
 pip install -r requirements.txt
+```
 
 ## Preparing datasets for training
 
