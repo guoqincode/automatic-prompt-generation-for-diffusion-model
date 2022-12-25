@@ -18,9 +18,8 @@ Twitcher is a web application to bridge the gaps between scientists' need for mo
 A quick introduction of the minimal setup you need to get the app up & running.
 
 ```shell
-git clone https://github.com/cs421sp21-homework/project-g03.git
-cd project-g03
-cd code
+git clone https://github.com/Guohanzhong/automatic-prompt-generation-for-diffusion-model.git
+cd automatic-prompt-generation-for-diffusion-model
 
 # Install all the dependencies for the frontend
 pip install -r requirements.txt
