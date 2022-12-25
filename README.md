@@ -25,9 +25,6 @@ cd automatic-prompt-generation-for-diffusion-model
 pip install -r requirements.txt
 ```
 
-## Demo for the Results
-
-
 ## Finetune GPT-2
 
 Once the datasets are set up, you can finetune your own GPT-2 networks as follows:
@@ -51,6 +48,12 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 | 2    | 4 hours | 8 hours  |
 | 4    | 3 hours  | 6 hours   |
 
+After Finetune, the basic use for inference is 
+```sh
+python inference.py --pre_path pretrained_path --ini_query str
+```
+* `pre_path` is the pretrained model path to load.
+* `ini_query` is the query input for generating a detailed prompt.
 ## Database
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
@@ -60,3 +63,5 @@ Before the finetune model, we need to prepare the dataset of DiffusionDB, and we
 <BOS> doom eternal, game concept art, veins and worms, muscular, crustacean exoskeleton, chiroptera head, chiroptera ears, mecha, ferocious, fierce, hyperrealism, fine details, artstation, cgsociety, zbrush, no background <EOS> 
 ```
 The data can be obtained as follows.
+
+## Results
