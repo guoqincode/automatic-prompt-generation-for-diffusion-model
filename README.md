@@ -50,7 +50,7 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 
 The basic usage for training is
 ```sh
-python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_device_train_batch_size per_device_train_batch_size     --per_device_eval_batch_size per_device_eval_batch_size --do_train --do_eval --output_dir path/output  --overwrite_output_dir True
+python run_clm.py --model_name_or_path gpt2   --train_file path/dataset  --per_device_train_batch_size per_device_train_batch_size --per_device_eval_batch_size per_device_eval_batch_size --do_train --do_eval --output_dir path/output --overwrite_output_dir True
 ```
 * `model_name_or_path` is the path to for basic model to finetune.
 * `train_file` is the dataset we use to finetune the model, it is recommond to use the diffusiondb.txt to finetune (More about this data is in the section "Database")
