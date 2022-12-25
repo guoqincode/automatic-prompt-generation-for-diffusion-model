@@ -65,6 +65,7 @@ Before the finetune model, we need to prepare the dataset of DiffusionDB, and we
 <BOS> doom eternal, game concept art, veins and worms, muscular, crustacean exoskeleton, chiroptera head, chiroptera ears, mecha, ferocious, fierce, hyperrealism, fine details, artstation, cgsociety, zbrush, no background <EOS> 
 ```
 The data can be obtained as follows.
+|[CelebA 64x64, SN-DPM](https://drive.google.com/file/d/1ZHiC5RrW7XFeEdqeAiAXAV0Srp32BnVB/view?usp=sharing) | 
 
 ## Results
 ```shell
