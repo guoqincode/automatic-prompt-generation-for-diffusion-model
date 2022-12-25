@@ -49,7 +49,7 @@ To obtain other datasets, including LSUN, please consult their corresponding pro
 > python dataset_tool.py create_from_images datasets/custom-dataset ~/custom-images
 ```
 
-## Training networks
+## Finetune GPT-2
 
 Once the datasets are set up, you can train your own StyleGAN networks as follows:
 
@@ -74,3 +74,4 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
 
+Before the finetune model, we need to prepare the dataset of DiffusionDB, and we only need its text data at this stage, with a total of two million text data. The data can be obtained as follows.
