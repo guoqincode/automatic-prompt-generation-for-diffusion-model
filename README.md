@@ -48,7 +48,9 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 | 4    | 11 days 8 hours  | 7 days 0 hours   | 4 days 21 hours  |
 | 8    | 6 days 14 hours  | 4 days 10 hours  | 3 days 8 hours   |
 
-
+```shell
+python run_clm.py     --model_name_or_path gpt2   --train_file /mnt/guohanzhong/bingdialogue/promptreinforce/diffusiondb.txt  --per_device_train_batch_size 5     --per_device_eval_batch_size 4     --do_train     --do_eval     --output_dir /mnt/guohanzhong/bingdialogue/promptreinforce/temp/  --overwrite_output_dir True
+```
 ## Database
 
 Our dataset is DIFFUSIONDB. DIFFUSIONDB is the first large-scale dataset containing 14 million Stable Diffusion images and their text prompts and hyperparameters. This dataset provides exciting research opportunities in prompt en- gineering, deepfake detection, as well as understanding and debugging large text-to-image generative models and its github is [DiffusionDB](https://poloclub.github.io/diffusiondb)
