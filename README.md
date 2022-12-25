@@ -65,3 +65,5 @@ Before the finetune model, we need to prepare the dataset of DiffusionDB, and we
 The data can be obtained as follows.
 
 ## Results
+
+![Result1](temp/dog.png)
