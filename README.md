@@ -46,9 +46,9 @@ Expected training times for the default configuration using Tesla V100 GPUs:
 
 | GPUs | 58000 iterations;  | 100000 iterations;   |
 | :--- | :--------------  | :------------    | 
-| 1    | 6 hours  | 10 hours | 
-| 2    | 4 hours | 8 hours  |
-| 4    | 3 hours  | 6 hours   |
+| 1    | 8 hours  | 11 hours | 
+| 2    | 6 hours | 9 hours  |
+| 4    | 4 hours  | 7 hours   |
 
 After Finetune, the basic use for inference is 
 ```sh
