@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# automatic-prompt-generation-for-stable-diffusion
 automatic prompt generation for stable diffusion
 =======
 # Twitcher
