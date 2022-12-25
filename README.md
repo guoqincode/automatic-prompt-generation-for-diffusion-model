@@ -87,3 +87,6 @@ Input: a picture of a man and a dog
 Output: a picture of a man and a dog kissing in a field, digital art, trending on artstation, concept art, award - winning, hyper detailed, ultra realistic, sharp, 4 k, 8 k, art by greg rutkowski
 ```
 ![Result1](temp/boy.png)
+
+## Further Work (Coming...)
+In the future version, we use the current GPT-2 as the benchmark model, besides supporting the user to input the original prompt to get a more detailed prompt, we will support the user to input several pictures of similar style to return a prompt model of a specific style, for example, if the user input several pictures of forest, the user will get a prompt model about forest, so when the user types "a room", the user will get a detailed prompt that will eventually generate a room in forest theme, so the user can implement their own style migration.
