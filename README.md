@@ -5,7 +5,7 @@ automatic prompt generation for stable diffusion
 This project is to help users better use text-to-image models such as Stable Diffusion. When users would like to generate some objects or certain landscapes, but the input prompts are too simple, resulting in relatively low quality output images and relatively monotonous content, this project is finetune GPT-2 on DiffusionDB for to realize the mapping of users' simple prompts to complex prompts.
 
 
-**Advisors** 
+**Author** 
 
 | Name | RUC Email | GitHub Username |
 | ---- | --------- | --------------- |
