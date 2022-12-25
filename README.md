@@ -65,5 +65,14 @@ Before the finetune model, we need to prepare the dataset of DiffusionDB, and we
 The data can be obtained as follows.
 
 ## Results
-
+```shell
+Input: portrait of a golden retriever
+Output: portrait of a golden retriever  in the style of tom bagshaw, norman rockwell, zdzislaw beksinski, lewis jones, dariusz zawadzki, wayne barlow, warhammer fantasy, cold hue's, warm tone gradient background, concept art, 4 k, ultra - high - definition
+```
 ![Result1](temp/dog.png)
+
+```shell
+Input: a picture of iron man
+Output: a picture of iron man, close up, fantasy, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, art by artgerm and greg rutkowski and alphonse mucha
+```
+![Result1](temp/iron.png)
